@@ -1,15 +1,15 @@
 import './app-thirdparty';
 import './app.less';
-import Task from "./Task";
+import Task from './Task';
 
 
 $(() => {
 
-    let itemsContainer = $("#items-container");
+    let itemsContainer = $('#items-container');
 
-    let addButton = $("#add");
+    let addButton = $('#add');
 
-    let itemInput = $("#item-input");
+    let itemInput = $('#item-input');
 
     addButton.click(_ => {
 
@@ -17,7 +17,5 @@ $(() => {
 
         let task = new Task(text, new Date());
         task.addMe(itemsContainer);
-
     });
-
 });

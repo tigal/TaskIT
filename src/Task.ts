@@ -19,11 +19,17 @@ export default class Task {
 
         this.element = html.clone();
 
-        this.element.find('.text').text(text);
+        this.element.find('.mb-1').text(text);
+        this.element.find('.badge-pill').text(date.toLocaleString());
+        this.element.find('.delete-button').click();
+        let deleteBtn: JQuery<Element> = this.element.find('.delete-button');
+
+        deleteBtn.click( _ => {
+            this.element.remove();
+        });
     }
 
     public addMe(root: JQuery<Element>) {
         root.append(this.element);
     }
-
 }
